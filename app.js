@@ -1,9 +1,12 @@
 /**ENCUESTA */
-let nombre = prompt ("Ingrese su nombre")
-alert("Hola " + nombre + ", bienvenido a esta breve encuesta de salud y alimentación.")
 
+function saludo (){
+    let nombre = prompt ("Ingrese su nombre")
+    alert("Hola " + nombre + ", bienvenido a esta breve encuesta de salud y alimentación.")
+} 
+saludo()
 let i = 3
-let fin = false
+let termina = false
 
 do{
     const pregunta1 = prompt ("¿Cuantos litros de agua consumes al día?")
@@ -13,12 +16,12 @@ do{
     let cambio = prompt("Eso es todo, ¿desea modificar sus respuesta? (si/no)")
     let siCambio = "si"
 
-    if(siCambio != cambio){
-        alert("Tus respuestas han sido registradas con éxito ¡Gracias por tu colaboración!")
+    if(siCambio === cambio){
+        alert("Se mostrarán nuevamente las preguntas.")
     } 
     else{
-        alert("De acuerdo, se mostrarán nuevamente las preguntas")
-        fin = true
-        i = i - 1
+        alert("Tus respuestas han sido registradas con éxito ¡Gracias por tu colaboración!")
+        termina = true
     }
-} while(i > 0 && fin == true)
+    i = i - 1
+} while(i > 0 && termina != true)
